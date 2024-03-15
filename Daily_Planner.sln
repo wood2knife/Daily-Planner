@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Planner.Api", "Daily_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Planner.Domain", "Daily_Planner.Domain\Daily_Planner.Domain.csproj", "{31F852EA-C351-46A2-BECC-B4AD43F9F6DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Planner.DAL", "Daily_Planner.DAL\Daily_Planner.DAL.csproj", "{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AC48CC49-91FA-4290-9795-C1BEA6CBDC77} = {042DDBA2-5BD1-491C-B6F2-3E5A44EA426C}
 		{31F852EA-C351-46A2-BECC-B4AD43F9F6DA} = {D86F77C3-3FD2-49FD-86E5-59693BC46352}
+		{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95} = {DD6D1FBF-5229-4856-B0FF-A8821E95FAB9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AC48CC49-91FA-4290-9795-C1BEA6CBDC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -28,5 +31,9 @@ Global
 		{31F852EA-C351-46A2-BECC-B4AD43F9F6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31F852EA-C351-46A2-BECC-B4AD43F9F6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F852EA-C351-46A2-BECC-B4AD43F9F6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA5D9F7-E9E8-4B03-A09C-FA36FB84EC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
