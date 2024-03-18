@@ -69,11 +69,38 @@ namespace Daily_Planner.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отчет уже существует.
+        /// </summary>
+        internal static string ReportAlreadyExist {
+            get {
+                return ResourceManager.GetString("ReportAlreadyExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отчет не найден.
+        /// </summary>
+        internal static string ReportNotFound {
+            get {
+                return ResourceManager.GetString("ReportNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Отчеты не найдены.
         /// </summary>
-        internal static string ReportsNotfound {
+        internal static string ReportsNotFound {
             get {
-                return ResourceManager.GetString("ReportsNotfound", resourceCulture);
+                return ResourceManager.GetString("ReportsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пользователь не найден.
+        /// </summary>
+        internal static string UserNotFound {
+            get {
+                return ResourceManager.GetString("UserNotFound", resourceCulture);
             }
         }
     }

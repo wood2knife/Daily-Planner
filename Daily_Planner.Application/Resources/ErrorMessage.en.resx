@@ -14,7 +14,16 @@
     <data name="InternalServerError" xml:space="preserve">
         <value>Internal server error</value>
     </data>
-    <data name="ReportsNotfound" xml:space="preserve">
+    <data name="ReportNotFound" xml:space="preserve">
+        <value>Report not found</value>
+    </data>
+    <data name="ReportAlreadyExist" xml:space="preserve">
+        <value>Report already exist</value>
+    </data>
+    <data name="ReportsNotFound" xml:space="preserve">
         <value>Reports not found</value>
+    </data>
+    <data name="UserNotFound" xml:space="preserve">
+        <value>User Not Found</value>
     </data>
 </root>
