@@ -16,7 +16,7 @@ public interface IReportService
     Task<CollectionResult<ReportDto>> GetReportsAsync(long userId);
 
     /// <summary>
-    /// Получение отчета п идентификатору
+    /// Получение отчета по идентификатору
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>

@@ -7,9 +7,11 @@
         <InvariantGlobalization>true</InvariantGlobalization>
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
         <RootNamespace>Dily_Planner.Api</RootNamespace>
+        <UserSecretsId>06c0d305-b262-4d09-9d70-39ec2c19fd3f</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
@@ -24,6 +26,10 @@
     <ItemGroup>
       <ProjectReference Include="..\Daily_Planner.Application\Daily_Planner.Application.csproj" />
       <ProjectReference Include="..\Daily_Planner.DAL\Daily_Planner.DAL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="logs\log-20240321.txt" />
     </ItemGroup>
 
 </Project>
