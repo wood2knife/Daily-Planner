@@ -8,6 +8,7 @@
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
         <RootNamespace>Dily_Planner.Api</RootNamespace>
         <UserSecretsId>06c0d305-b262-4d09-9d70-39ec2c19fd3f</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
