@@ -111,7 +111,7 @@ public class AuthService : IAuthServices
                 new Claim(ClaimTypes.Role, "User Role")
             };
             var accesToken = _tokenService.GenerateAccessToken(claims);
-            var refreshToken = _tokenService.GenerateRefreshtoken();
+            var refreshToken = _tokenService.GenerateRefreshToken();
             if (userToken == null)
             {
                 userToken = new UserToken()

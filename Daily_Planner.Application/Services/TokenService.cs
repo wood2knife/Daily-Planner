@@ -32,7 +32,7 @@ public class TokenService : ITokenService
         return token;
     }
 
-    public string GenerateRefreshtoken()
+    public string GenerateRefreshToken()
     {
         var randomNumbers = new byte[32];
         using var randomNumberGenerator = RandomNumberGenerator.Create();
