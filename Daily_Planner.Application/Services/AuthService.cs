@@ -118,7 +118,7 @@ public class AuthService : IAuthServices
                 {
                     UserId = user.Id,
                     RefreshToken = refreshToken,
-                    RefreshTokenExpirytime = DateTime.UtcNow.AddDays(7);
+                    RefreshTokenExpirytime = DateTime.UtcNow.AddDays(7)
                 };
                 await _userTokenRepository.CreateAsync(userToken);
             }
