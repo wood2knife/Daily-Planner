@@ -1,11 +1,46 @@
 ﻿using System.Reflection;
+using System.Text;
 using Asp.Versioning;
+using Daily_Planner.Domain.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace Daily_Planner.Api;
 
 public static class Startup
 {
+    /// <summary>
+    /// Authentication and authorization settings
+    /// </summary>
+    public static void AddAuthenticationAndAuthorization(this IServiceCollection services, WebApplicationBuilder builder)
+    {
+        services.AddAuthorization();
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(o =>
+        {
+            var options = builder.Configuration.GetSection(JwtSettings.DefaultSection).Get<JwtSettings>();
+            var jwtKey = options.JwtKey;
+            var issuer = options.Issuer;
+            var audience = options.Audience;
+            o.Authority = options.Authority;
+            o.RequireHttpsMetadata = false;
+            o.TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidIssuer = issuer,
+                ValidAudience = audience,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+                ValidateIssuer = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true
+            };
+        });
+    }
+    
     /// <summary>
     /// Подключение Swagger
     /// </summary>

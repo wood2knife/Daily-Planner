@@ -6,12 +6,13 @@ namespace Daily_Planner.DAL.Interceptors;
 
 public class DateInterceptor : SaveChangesInterceptor
 {
-    public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
+    public override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result,
+        CancellationToken cancellationToken = new CancellationToken())
     {
         var dbContext = eventData.Context;
         if (dbContext == null)
         {
-            return base.SavingChanges(eventData, result);
+            return base.SavingChangesAsync(eventData, result);
         }
 
         var entries = dbContext.ChangeTracker.Entries<IAuditable>()
@@ -30,6 +31,6 @@ public class DateInterceptor : SaveChangesInterceptor
             }
         }
 
-        return base.SavingChanges(eventData, result);
+        return base.SavingChangesAsync(eventData, result);
     }
 }

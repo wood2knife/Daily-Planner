@@ -69,6 +69,15 @@ namespace Daily_Planner.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пароли не совпадают.
+        /// </summary>
+        internal static string PasswordNotEqualsPasswordConfirm {
+            get {
+                return ResourceManager.GetString("PasswordNotEqualsPasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Отчет уже существует.
         /// </summary>
         internal static string ReportAlreadyExist {
@@ -96,11 +105,29 @@ namespace Daily_Planner.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пользователь уже существует.
+        /// </summary>
+        internal static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пользователь не найден.
         /// </summary>
         internal static string UserNotFound {
             get {
                 return ResourceManager.GetString("UserNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неверно введенный пароль.
+        /// </summary>
+        internal static string WrongUserPassword {
+            get {
+                return ResourceManager.GetString("WrongUserPassword", resourceCulture);
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Daily_Planner.Application.Resources;
-using Daily_Planner.Domain.Dto;
 using Daily_Planner.Domain.Dto.Report;
 using Daily_Planner.Domain.Entity;
 using Daily_Planner.Domain.Enum;

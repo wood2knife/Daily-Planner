@@ -1,11 +1,15 @@
 using Daily_Planner.Api;
 using Daily_Planner.Application.DependencyInjection;
 using Daily_Planner.DAL.DependencyInjection;
+using Daily_Planner.Domain.Settings;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(JwtSettings.DefaultSection));
+
 builder.Services.AddControllers();
+builder.Services.AddAuthenticationAndAuthorization(builder);
 builder.Services.AddSwagger();
 
 builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));

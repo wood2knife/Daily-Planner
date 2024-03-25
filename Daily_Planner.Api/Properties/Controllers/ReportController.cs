@@ -5,9 +5,9 @@ using Daily_Planner.Domain.Result;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dily_Planner.Api.Properties.Controllers;
+namespace Daily_Planner.Api.Properties.Controllers;
 
-[Authorize]
+//[Authorize]
 [ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/[controller]")]
