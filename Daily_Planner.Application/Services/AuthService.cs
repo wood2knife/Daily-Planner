@@ -110,7 +110,7 @@ public class AuthService : IAuthServices
                 new Claim(ClaimTypes.Name, user.Login),
                 new Claim(ClaimTypes.Role, "User Role")
             };
-            var accesToken = _tokenService.GenerateAccessToken(claims);
+            var accessToken = _tokenService.GenerateAccessToken(claims);
             var refreshToken = _tokenService.GenerateRefreshToken();
             if (userToken == null)
             {
@@ -126,13 +126,14 @@ public class AuthService : IAuthServices
             {
                 userToken.RefreshToken = refreshToken;
                 userToken.RefreshTokenExpirytime = DateTime.UtcNow.AddDays(7);
+                await _userTokenRepository.UpdateAsync(userToken);
             }
 
             return new BaseResult<TokenDto>()
             {
                 Data = new TokenDto()
                 {
-                    AccessToken = accesToken,
+                    AccessToken = accessToken,
                     RefreshToken = refreshToken
                 }
             };
@@ -157,6 +158,6 @@ public class AuthService : IAuthServices
     private string HashPassword(string password)
     {
         var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(password));
-        return BitConverter.ToString(bytes).ToLower();
+        return Convert.ToBase64String(bytes);
     }
 }
