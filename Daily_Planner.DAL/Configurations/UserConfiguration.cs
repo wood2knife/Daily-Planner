@@ -15,6 +15,13 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId)
             .HasPrincipalKey(x => x.Id);
+
+        builder.HasMany<Role>(x => x.Roles)
+            .WithMany(x => x.Users)
+            .UsingEntity<UserRole>(
+                l => l.HasOne<Role>().WithMany().HasForeignKey(x => x.RoleId),
+                l => l.HasOne<User>().WithMany().HasForeignKey(x => x.UserId)
+            );
         
         //test data for database
         builder.HasData(new List<User>()

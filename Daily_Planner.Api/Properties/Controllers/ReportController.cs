@@ -156,7 +156,7 @@ public class ReportController : ControllerBase
     /// <response code="200">Success response</response>
     /// <response code="400">Bad request</response>
     [HttpPut]
-    public async Task<ActionResult<BaseResult<ReportDto>>> Updatereport([FromBody] UpdateReportDto dto)
+    public async Task<ActionResult<BaseResult<ReportDto>>> UpdateReport([FromBody] UpdateReportDto dto)
     {
         var response = await _reportService.UpdateReportAsync(dto);
         if (response.IsSuccess)

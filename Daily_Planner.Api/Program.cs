@@ -1,4 +1,5 @@
 using Daily_Planner.Api;
+using Daily_Planner.Api.Middlewares;
 using Daily_Planner.Application.DependencyInjection;
 using Daily_Planner.DAL.DependencyInjection;
 using Daily_Planner.Domain.Settings;
@@ -18,6 +19,8 @@ builder.Services.AddApplication();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionHandlerMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -29,6 +32,8 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
+
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

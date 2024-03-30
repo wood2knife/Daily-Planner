@@ -123,11 +123,38 @@ namespace Daily_Planner.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Роль уже существует.
+        /// </summary>
+        internal static string RoleAlreadyExists {
+            get {
+                return ResourceManager.GetString("RoleAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Роль не найдена.
+        /// </summary>
+        internal static string RoleNotFound {
+            get {
+                return ResourceManager.GetString("RoleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пользователь уже существует.
         /// </summary>
         internal static string UserAlreadyExists {
             get {
                 return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пользователь уже имеет эту роль.
+        /// </summary>
+        internal static string UserAlreadyHadThisRole {
+            get {
+                return ResourceManager.GetString("UserAlreadyHadThisRole", resourceCulture);
             }
         }
         
