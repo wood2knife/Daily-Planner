@@ -49,12 +49,7 @@ public class RoleService : IRoleService
             Data = _mapper.Map<RoleDto>(role)
         };
     }
-
-    public Task<BaseResult<Role>> CreateRoleAsync(RoleDto dto)
-    {
-        throw new NotImplementedException();
-    }
-
+    
     public async Task<BaseResult<RoleDto>> DeleteRoleAsync(long id)
     {
         var role = await _roleRepository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
