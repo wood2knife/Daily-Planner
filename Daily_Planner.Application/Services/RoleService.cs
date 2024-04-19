@@ -101,7 +101,7 @@ public class RoleService : IRoleService
             return new BaseResult<UserRoleDto>()
             {
                 ErrorMessage = ErrorMessage.UserNotFound,
-                ErrorCode = (int)ErrorCodes.UserAlreadyExists
+                ErrorCode = (int)ErrorCodes.UserNotFound
             };
         }
         var roles = user.Roles.Select(x => x.Name).ToArray();
@@ -112,8 +112,8 @@ public class RoleService : IRoleService
             {
                 return new BaseResult<UserRoleDto>()
                 {
-                    ErrorMessage = ErrorMessage.UserNotFound,
-                    ErrorCode = (int)ErrorCodes.UserAlreadyExists
+                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    ErrorCode = (int)ErrorCodes.RoleNotFound    
                 };
             }
 
